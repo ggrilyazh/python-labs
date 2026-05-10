@@ -1,0 +1,11 @@
+students = {
+    "Иван": [5, 4, 3],
+    "Алина": [5, 5, 4, 3],
+    "Дмитрий": [2, 3],
+    "Олег": [5, 5, 5, 5],
+}
+
+print("Ученик | Кол-во оценок")
+
+for name, grades in students.items():
+    print(name, "|", len(grades))
