@@ -1,35 +1,20 @@
-import timeit
-import random
+def plus_one(n):
+    return n + 1
 
-def binary_search(left, right, x, y):
-    """Бинарный поиск значения mid, такого что mid + y == x"""
-    if left > right:
-        return None
-    
-    mid = (left + right) // 2
-    if mid + y == x:
-        return mid
-    elif mid + y < x:
-        return binary_search(mid + 1, right, x, y)
-    else:
-        return binary_search(left, mid - 1, x, y)
+def minus_one(n):
+    return int(str(n - 1))
 
-def search():
-    """Запускает бинарный поиск для всех тестовых пар"""
-    for x, y in test:
-        binary_search(0, x, x, y)
 
-# Генерация тестовых данных
-test = []
-for _ in range(4000):
-    x = random.randint(10, 1000)
-    y = random.randint(1, x - 1)
-    test.append((x, y))
+def find_z(x, y):
+    z = 0
 
-# Проверка на втором элементе
-x, y = test[1]
-z = binary_search(0, x, x, y)
-print(f"Результат проверки (z + y - x): {(z + y) - x if z is not None else 'None'}")
+    while z + y != x:
+        if z + y < x:
+            z = plus_one(z)
+        else:
+            z = minus_one(z)
 
-# Замер времени выполнения
-print(timeit.timeit(search, number=1))
+    return z
+
+
+print(find_z(2, -1))
