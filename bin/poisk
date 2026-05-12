@@ -1,20 +1,18 @@
-def plus_one(n):
-    return n + 1
+def find_z_binary(x, y):
+    left = -1000
+    right = 1000
 
-def minus_one(n):
-    return int(str(n - 1))
+    while left <= right:
+        mid = (left + right) // 2
 
+        if mid + y == x:
+            return mid
 
-def find_z(x, y):
-    z = 0
+        elif mid + y < x:
+            left = mid + 1
 
-    while z + y != x:
-        if z + y < x:
-            z = plus_one(z)
         else:
-            z = minus_one(z)
-
-    return z
+            right = mid - 1
 
 
-print(find_z(2, -1))
+print(find_z_binary(74, 481))
