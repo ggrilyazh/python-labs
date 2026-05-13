@@ -1,19 +1,23 @@
 numbers = [5, 12, 7, 20, 3, 15]
 
-maximum = max(numbers)
-minimum = min(numbers)
-total = sum(numbers)
-average = total / len(numbers)
-
+maximum = numbers[0]
+minimum = numbers[0]
+total = 0
 more_than_10 = []
 
 for num in numbers:
+    total = total + num
+
+    if num > maximum:
+        maximum = num
+
+    if num < minimum:
+        minimum = num
+
     if num > 10:
         more_than_10.append(num)
 
-print("Список:", numbers)
 print("Максимум:", maximum)
 print("Минимум:", minimum)
 print("Сумма:", total)
-print("Среднее:", average)
 print("Числа больше 10:", more_than_10)
