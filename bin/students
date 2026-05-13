@@ -1,11 +1,7 @@
-students = {
-    "Иван": [5, 4, 3],
-    "Алина": [5, 5, 4, 3],
-    "Дмитрий": [2, 3],
-    "Олег": [5, 5, 5, 5],
-}
+students = ["Ибрагимов", "Гаджиев"]
+dates = ["02.03.2026", "03.03.2026"]
 
-print("Ученик | Кол-во оценок")
-
-for name, grades in students.items():
-    print(name, "|", len(grades))
+for student in students:
+    for date in dates:
+        for grade in range(2, 6):
+            print(student, date, grade)
